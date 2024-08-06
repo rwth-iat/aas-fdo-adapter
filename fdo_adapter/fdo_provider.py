@@ -22,7 +22,7 @@ class PID:
 
 class FdoServiceAasRegistryDictObjectStore(DictObjectStore):
     """
-    A special DictObjectStore that is used to generate the FDOs of an AAS.
+    A special DictObjectStore that is used to generate the FDOs of added AAS.
 
     This class is used to generate the FDOs of added AAS and store them in a local in-memory object store.
     On add AAS to the store, the FDO of the AAS is generated and sent to the FDO Manager.

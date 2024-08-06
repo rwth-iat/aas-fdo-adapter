@@ -10,11 +10,13 @@ from werkzeug.serving import run_simple
 
 
 def create_example_fdo_obj_store():
+    # Create an object store with fdo service to generate FDOs of added AAS
     obj_store: FdoServiceAasRegistryDictObjectStore = FdoServiceAasRegistryDictObjectStore(
         fdo_manager_url="http://localhost:8081/api/v1",
         fdo_manager_token="skldjflskdjf",
         fdo_repository="mock-repo-1"
     )
+    # Add example AAS objects to the object store
     obj_store.add(create_example_asset_identification_submodel())
     obj_store.add(create_example_bill_of_material_submodel())
     obj_store.add(create_example_submodel())
@@ -24,7 +26,9 @@ def create_example_fdo_obj_store():
 
 
 def run_aas_server():
+    # Create an object store with fdo service
     fdo_obj_store = create_example_fdo_obj_store()
+    # Run the AAS server with the object store
     run_simple(hostname="localhost",
                port=8080,
                application=WSGIApp(
