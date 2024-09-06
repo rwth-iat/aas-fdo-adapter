@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "aas-fdo-adapter"
 version = "0.0.1"
 dependencies = [
-    "basyx-python-sdk @ git+https://github.com/rwth-iat/basyx-python-sdk/@feature/http_api",
+    "basyx-python-sdk @ git+https://github.com/rwth-iat/basyx-python-sdk",
 ]
 authors = [
   { name="Igor Garmaev", email="i.garmaev@iat.rwth-aachen.de" },
